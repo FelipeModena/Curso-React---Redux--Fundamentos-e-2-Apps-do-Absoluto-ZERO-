@@ -14,11 +14,18 @@ const calcFactorial = (num) => {
 const UseEffect = (props) => {
   const [number, setNumber] = useState(1);
   const [factorial, setFactorial] = useState(1);
-  const [status, setStatus] = useState(true);
+  const [status, setStatus] = useState("true");
 
   useEffect(
     function () {
       setFactorial(calcFactorial(number));
+    },
+    [number]
+  );
+
+  useEffect(
+    function () {
+      setStatus(isNaN(number) ? "Não é número" : number % 2 ? "Impar" : "Par");
     },
     [number]
   );
@@ -36,6 +43,7 @@ const UseEffect = (props) => {
             className="input"
             type="number"
             onChange={(e) => setNumber(e.target.value)}
+            value={number}
           />
           <p>
             Fatorial:
@@ -46,16 +54,9 @@ const UseEffect = (props) => {
         </div>
         <SectionTitle title="Ex. 2" />
         <div>
-          <input
-            className="input"
-            type="text"
-            onChange={(e) => setStatus(e.target.value)}
-          />
           <p>
             Status:
-            <span className="text">
-              {isNaN(status) ? "Não é número" : status % 2 ? "Impar" : "Par"}
-            </span>
+            <span className="text">{status} </span>
           </p>
         </div>
       </div>
