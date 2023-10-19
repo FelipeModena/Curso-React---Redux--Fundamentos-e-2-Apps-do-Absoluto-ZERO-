@@ -5,13 +5,7 @@ import SectionTitle from "../../components/layout/SectionTitle";
 const UseState = (props) => {
   const [counter, setCounter] = useState(0);
 
-  function raiseCounter() {
-    setCounter(counter + 1);
-  }
 
-  function decreaseCounter() {
-    setCounter(counter - 1);
-  }
   return (
     <div className="UseState">
       <PageTitle
@@ -26,8 +20,8 @@ const UseState = (props) => {
             Valor do contador: <span className="text"> {counter}</span>
           </p>
         </div>
-        <button onClick={raiseCounter}>Aumentar contador</button>
-        <button onClick={decreaseCounter}>Diminui contador</button>
+        <button onClick={() => setCounter(counter+1)}>Aumentar contador</button>
+        <button onClick={()=> setCounter(counter-1)}>Diminui contador</button>
       </div>
     </div>
   );
