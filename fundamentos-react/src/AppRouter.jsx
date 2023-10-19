@@ -1,0 +1,17 @@
+import React from 'react'
+ 
+import { BrowserRouter } from  'react-router-dom' // essa importação mudou
+ 
+import Menu from './components/layout/Menu'
+import Content from './components/layout/Content'
+ 
+const AppRouter = props => (
+    <div className="App">
+        <BrowserRouter> 
+            <Menu />
+            <Content />
+        </BrowserRouter> 
+    </div>
+)
+ 
+export default AppRouter

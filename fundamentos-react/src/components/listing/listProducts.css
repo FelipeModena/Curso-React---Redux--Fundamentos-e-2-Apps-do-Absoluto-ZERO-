@@ -1,0 +1,21 @@
+table{
+    width: 100%;
+    text-align: center;
+    
+}
+
+thead{
+    background-color: rgb(100, 99, 99);
+
+}
+
+table .pair-tr{
+    background-color: rgb(63, 87, 106);
+    color: white;
+}
+
+table .odd-tr{
+    background-color: rgb(94, 127, 154);
+    color: white;
+
+}
